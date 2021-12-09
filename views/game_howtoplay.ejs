@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <title>Main</title>
+</head>
+<body>
+
+<div class="d-flex flex-column flex-lg-row h-lg-full bg-surface-secondary">
+  <!-- Vertical Navbar -->
+  <nav class="navbar show navbar-vertical h-lg-screen navbar-expand-lg px-0 py-3 navbar-light bg-white border-bottom border-bottom-lg-0 border-end-lg" id="navbarVertical">
+      <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="sidebarCollapse">
+              <!-- Navigation -->
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/home">
+                        <i class="bi bi-house"></i> Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/group_select">
+                        <i class="bi bi-bar-chart"></i> Group
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/game">
+                        <i class="bi bi-chat"></i> Game
+                    </a>
+                </li>/
+            </ul>
+              
+              <div class="mt-auto"></div>
+              <ul class="navbar-nav">
+                  <li class="nav-item">
+                      <a class="nav-link" href="/signout">
+                          <i class="bi bi-box-arrow-left"></i> Logout
+                      </a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+
+  <div class="h-screen flex-grow-1 overflow-y-lg-auto">
+    
+      <header class="bg-surface-primary border-bottom pt-6">
+          <div class="container-fluid">
+              <div class="mb-npx">
+                  <div class="row align-items-center">
+                      <div class="col-sm-6 col-12 mb-4 mb-sm-0">
+                          <h1 class="h2 mb-0 ls-tight">Welcome back <%= user%></h1>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </header>
+      <!-- Main -->
+      <main>
+
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" href="#HTPTTT">How To Play: Tic Tac Toe</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" href="#HTPPC">How To Play: Popcat</a>
+            </li>
+          </ul>
+ 
+        <div class="tab-content">
+            <div id="HTPChess" class="container tab-pane active"><br>
+              <h3>Tic Tac Toe</h3>
+              <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th style="background-color: yellowgreen; color: black;">Part 1</th>
+                        <th>Playing Tic-Tac-Toe</th>
+                    </tr>
+                </thead>
+            </table>
+            <img src="https://www.wikihow.com/images/thumb/5/52/Play-Tic-Tac-Toe-Step-1.jpg/aid84863-v4-728px-Play-Tic-Tac-Toe-Step-1.jpg.webp">
+                <h5><h1>1</h1>Draw the board. First, you have to draw the board, which is made up of a 3 x 3 grid of squares. This means it has three rows of three squares. Some people play with a 4 x 4 grid, but that is for more advanced players, and we will focus on the 3 x 3 grid here.
+                </h5>
+            <img src="https://www.wikihow.com/images/thumb/5/56/Play-Tic-Tac-Toe-Step-2.jpg/aid84863-v4-728px-Play-Tic-Tac-Toe-Step-2.jpg.webp">
+                <h5><h1>2</h1>Have the first player go first. Though traditionally, the first player goes with "X", you can allow the first player to decide whether he wants to go with "X"s or "O"s. These symbols will be placed on the table, in the attempt to have three of them in a row. If you're going first, then the best move you can make is to move into the center. This will maximize your chances of winning, since you'll be able to create a row of three "X"s or "O"s in more combinations (4) this way than if you chose a different square.
+                </h5>
+                <img src="https://www.wikihow.com/images/thumb/2/21/Play-Tic-Tac-Toe-Step-3.jpg/aid84863-v4-728px-Play-Tic-Tac-Toe-Step-3.jpg.webp">
+                <h5><h1>3</h1>Have the second player go second. After the first player goes, then the second player should put down his symbol, which will be different from the symbol of the first player. The second player can either try to block the first player from creating a row of three, or focus on creating his or her own row of three. Ideally, the player can do both.
+                </h5>
+            <img src="https://www.wikihow.com/images/thumb/7/7d/Play-Tic-Tac-Toe-Step-4.jpg/aid84863-v4-728px-Play-Tic-Tac-Toe-Step-4.jpg.webp">
+                <h5><h1>4</h1>Keep alternating moves until one of the players has drawn a row of three symbols or until no one can win. The first player to draw three of his or her symbols in a row, whether it is horizontal, vertical, or diagonal, has won tic-tac-toe. However, if both players are playing with optimal strategy, then there's a good chance that no one will win because you will have blocked all of each other's opportunities to create a row of three.
+                </h5>
+                <img src="https://www.wikihow.com/images/thumb/f/f6/Play-Tic-Tac-Toe-Step-5.jpg/aid84863-v4-728px-Play-Tic-Tac-Toe-Step-5.jpg.webp">
+                <h5><h1>5</h1>Keep practicing. Contrary to popular belief, tic-tac-toe isn't purely a game of chance. There are some strategies that can help you optimize your skills and to become an expert tic-tac-toe player. If you keep playing, you'll soon learn all of the tricks to making sure you win every time -- or, at least, you'll learn the tricks to make sure you never lose. Its like 0's and x's.
+                </h5>
+                <table class="table table-bordered">
+                  <thead>
+                      <tr>
+                          <th style="background-color: yellowgreen; color: black;">Part 2</th>
+                          <th>Becoming an Expert</th>
+                      </tr>
+                  </thead>
+              </table>    
+            <img src="https://www.wikihow.com/images/thumb/b/b0/Play-Tic-Tac-Toe-Step-6.jpg/aid84863-v4-728px-Play-Tic-Tac-Toe-Step-6.jpg.webp">
+                <h5><h1>1</h1>Make the best first move. The best move, if you go first, is to go in the center. There are no ifs, ands, or buts about it. If you go in the middle, you will have the highest chance of winning the game. And if you let your opponent go there, you will have the highest chance of losing. And you don't want that, do you?
+                  <ul><li>If you don't go in the center, your next best move is to go in one of the four corners. That way, if your opponent does not choose the center (and a novice player may not), then you have a high chance of winning.</li></ul>
+                  <ul><li>Avoid the edges as a first move. The edges are the four boxes that are neither the center or the corner. If you go here first, you will have the smallest chance of winning.</li></ul>
+                </h5>
+                <img src="https://www.wikihow.com/images/thumb/a/a2/Play-Tic-Tac-Toe-Step-7.jpg/aid84863-v4-728px-Play-Tic-Tac-Toe-Step-7.jpg.webp">
+                <h5><h1>2</h1>
+                  React appropriately if the other player goes first. If the other player goes first and does not go in the center, then you should go in the center. But if the other player does go in the center, then your best bet is to place your symbol on one of the corner squares.
+                </h5>
+                <img src="https://www.wikihow.com/images/thumb/4/4c/Play-Tic-Tac-Toe-Step-8.jpg/aid84863-v4-728px-Play-Tic-Tac-Toe-Step-8.jpg.webp">
+                <h5><h1>3</h1>Follow the "right, left, above, and below" strategy. This is another sure-fire strategy that will help you win the game. When your opponent makes a mark, see if you can place your symbol to the right of his symbol. If you can't, then see if you can place it to the left. If you can't, then move it above your opponent's symbol. And finally, if that doesn't work, see if you can move your mark below your opponent's. This strategy ensures that you'll be most successful at optimizing your position and blocking your opponent from scoring.
+                </h5>
+                <img src="https://www.wikihow.com/images/thumb/e/ea/Play-Tic-Tac-Toe-Step-9.jpg/aid84863-v4-728px-Play-Tic-Tac-Toe-Step-9.jpg.webp">
+                <h5><h1>4</h1>Use the three-corner strategy. Another strategy for winning the game of tic-tac-toe is to place your symbols in three of the four corners of the board. This can optimize your chances of getting three in a row because you'll be able to create a diagonal row or rows along the sides of the grid. This will work if your opponent does not completely thwart you, of course.
+                </h5>
+                <img src="https://www.wikihow.com/images/thumb/2/2d/Play-Tic-Tac-Toe-Step-10.jpg/aid84863-v4-728px-Play-Tic-Tac-Toe-Step-10.jpg.webp">
+                <h5><h1>5</h1>Play against a machine. If you really want to up your strategy and make sure that you never lose, then it's best to play as much as you can instead of memorizing a list of strategies. You can find computers online that can play against you and will quickly be able to play a game where you never lose (even if you can't win).
+                </h5>
+                <img src="https://www.wikihow.com/images/thumb/0/0b/Play-Tic-Tac-Toe-Step-11.jpg/aid84863-v4-728px-Play-Tic-Tac-Toe-Step-11.jpg.webp">
+                <h5><h1>6</h1>Take it to the next level. If you feel stifled by the 3 x 3 board, then it may be time for you to play on a board that is 4 x 4 or even 5 x 5 squares large. The bigger the board, the bigger the row you'll have to create; for the 4 x 4 board, you'll need to create 4 symbols in a row and for the 5 x 5 board, you'll need to create a row of 5 symbols, and so on.
+                </h5>                                
+            </div>
+            <div id="HTPPC" class="container tab-pane fade"><br>
+              <h3>Pop Cat</h3>
+              <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th style="background-color: yellowgreen; color: black;">Only 1 Part</th>
+                        <th>Begining</th>
+                    </tr>
+                </thead>
+            </table>
+            <img src="https://img.4gamers.com.tw/ckfinder-th/image2/auto/2021-08/popcat%20%E0%B9%80%E0%B8%81%E0%B8%A1-210816-151323.jpg?versionId=4zcyWc9GBKfO75DTnJYDkjc8707zIYq0" style="width: 514; height: 728;">
+                <h5><h1></h1>All you have to do is click on a picture of a cat. That makes the cat open its mouth, forming a big “O”, with an accompanying “pop” sound.
+                </h5>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+      </main>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+ 
+</body>
+
+<style>
+  /* Webpixels CSS */
+/* Utility and component-centric Design System based on Bootstrap for fast, responsive UI development */
+/* URL: https://github.com/webpixels/css */
+
+@import url(https://unpkg.com/@webpixels/css@1.1.5/dist/index.css);
+
+/* Bootstrap Icons */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.4.0/font/bootstrap-icons.min.css");
+
+</style>
+
+
+
+</html>
+
+

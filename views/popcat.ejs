@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Popcat</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" integrity="sha512-Cv93isQdFwaKBV+Z4X8kaVBYWHST58Xb/jVOcV9aRsGSArZsgAnFIhMpDoMDcFNoUtday1hdjn0nGp3+KZyyFw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+<body>
+    <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link disabled" href="/home">Welcome back <%= user%></a>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Game
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="/ox_game">Tic Tac Toe</a>
+            <a class="dropdown-item" href="/popcat">Popcat</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/signout">Sign Out</a>
+        </li>
+        
+      </ul>
+    <div class="container">
+        <h1>POPCAT</h1>
+        <p id="score">0</p>
+        <img src="https://i.imgur.com/gqlVLA6.png" alt="Invalid" id="popcat1" height="600px">
+        
+    </div>
+</body>
+
+<script>
+    var img = document.getElementById("popcat1");
+var count = document.getElementById("score");
+var malaysiaScore = document.getElementById('my_score');
+var score = 0;
+var MyScore = 10000;
+var audio = new Audio('pop.mp3');
+// mouseclick event
+img.addEventListener("mousedown", function(){
+    increaseScore();
+    img.src = 'https://i.imgur.com/6eklM4P.png';
+    audio.play();
+});
+    
+img.addEventListener("mouseup", function(){
+    img.src = 'https://i.imgur.com/gqlVLA6.png';
+    audio.play();
+});
+
+// touch event
+img.addEventListener("touchstart", function(){
+    increaseScore();
+    img.src = 'https://i.imgur.com/6eklM4P.png';
+    audio.play();
+});
+
+img.addEventListener("touchmove", function(){
+    img.src = 'https://i.imgur.com/gqlVLA6.png';
+     audio.play();
+});
+
+function increaseScore(){
+    score++;
+    MyScore++;
+    count.innerHTML = score;
+    malaysiaScore.innerHTML = MyScore;
+    document.getElementById("table").rows[5].cells.item(3).innerHTML = MyScore;
+}
+
+</script>
+
+<style>
+    body {
+    margin: 0%;
+    padding: 0%;
+    background: linear-gradient(to right, #ffefba, #ffffff);
+    overflow-y: hidden;
+    font-family: Nunito, sans-serif;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    font-size: 6.5em;
+    margin: 1% 0% -5% 0%;
+    font-family: Nunito, sans-serif;
+    -webkit-text-stroke: 2px black;
+    color: white;
+}
+#country_score{
+    margin-left: 50px;
+}
+#score{
+    font-size: 4em;
+    font-family: Nunito, sans-serif;
+    -webkit-text-stroke: 2px black;
+    color: white;
+    margin-bottom: -6%;
+}
+button{
+    margin-top: 4%;
+    font-size: 25px;
+    background-color: white;
+    padding: 10px 250px 10px 250px;
+    border: none;
+    outline: none;
+}
+.tabs {
+    margin-top: 4%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
+  }
+.tab{
+    width: 100%;
+    color: white;
+    overflow: hidden;
+}
+label{
+    word-spacing: 1cm;
+}
+.tab-label {
+    word-spacing: 50px;
+    display: -webkit-box;
+    color: black;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding: 1em 3em 1em 3em;
+    background:white;
+    font-weight: bold;
+    cursor: pointer;
+}
+.tab-label::after {
+    content: "\02C4";
+    margin-left: 10px;
+    -webkit-transition: all .35s;
+    transition: all .35s;
+}
+.tab-content {
+    color: black;
+    background: white;
+    -webkit-transition: all .35s;
+    transition: all .35s;
+}
+input:checked + .tab-label::after {
+    content: "\02C5";
+}
+input:checked ~ .tab-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 32%;
+    overflow-y:scroll;
+    max-height: 55%;
+    font-size: 20px;
+    padding: 50px 20px 20px 20px;
+    border-radius: 15px;
+}
+table{
+    border-collapse: collapse;
+}
+tr.bordered {
+    border-bottom: 1px solid silver;
+    white-space: nowrap;
+}
+tr.bordered>td{
+    padding-top: 0.5em;
+    padding-bottom: 0.3em;
+}
+tr.bordered>#wide_score{
+    padding-left: 17.2em;
+}
+input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+@media only screen and (max-width: 480px) {
+    #popcat1 {
+        width: 450px;
+        margin-top: -13%;
+    }
+    h1{
+        font-size: 4.5em;
+        margin-bottom: -20%;
+    }
+    img{
+        height: 500px;
+    }
+    html{
+        overflow-y: hidden;
+    }
+    body{
+      overflow:hidden;
+    }
+    .tabs{
+      font-size: 35px;
+      margin-top: 5%;
+      margin-right: 25%;
+    }
+    .tab-label{
+      white-space: nowrap;
+    }
+    tr.bordered{
+      font-size: 20px;
+    }
+    tr.bordered>#wide_score{
+      padding-left: 10em;
+    }
+    .tab-content{
+        margin-top: 10%;
+        left: 10%;
+        overflow-y: scroll;
+    }
+    .tab-content td{
+        font-size: 10px;
+    }
+}
+
+</style>
+
+</html>
